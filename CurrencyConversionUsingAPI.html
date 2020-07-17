@@ -9,7 +9,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('form').onsubmit = function () {
                 //to do web request
-                fetch('https://api.exchangeratesapi.io/latest?base=USD')
+                fetch('https://api.exchangeratesapi.io/latest?base=INR')
                     .then(response => response.json())
                     .then(data => {
 
