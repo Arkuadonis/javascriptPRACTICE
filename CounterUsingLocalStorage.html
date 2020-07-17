@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <script>
+        
+        //localstorage
+        if(!localStorage.getItem('counter')){
+            localStorage.setItem('counter',0);
+        }
+
+        function count() {
+            let counter = localStorage.getItem('counter')
+            counter++;
+            document.querySelector('h1').innerHTML = counter;
+
+            localStorage.setItem('counter', counter);
+        }
+            //seperating html and js
+            document.addEventListener('DOMContentLoaded', function () {
+                //to avoid counter to become 0 on refresh
+                document.querySelector('h1').innerHTML = localStorage.getItem('counter');
+                //onclick call the count() fn
+                document.querySelector('button').onclick = count;
+           
+               // setInterval(count,1000);
+            });
+        
+    </script>
+</head>
+
+<body>
+    <h1>0</h1>
+    <button>Click Here</button>
+</body>
+
+</html>
